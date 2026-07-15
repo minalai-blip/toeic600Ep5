@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【EP05】多益600核心單字・基礎打底特訓</title>
+    <title>【EP05】多益600核心單字・打底特訓</title>
     <style>
         :root {
             --primary: #2c3e50;
@@ -83,7 +83,7 @@
 <body>
 
 <div class="container">
-    <img src="banner.jpg" id="main-banner" alt="【EP05】基礎打底特訓" class="banner"> 
+    <img src="banner.jpg" id="main-banner" alt="EP05 打底特訓" class="banner"> 
 
     <div class="content-padding">
         <div id="intro-area" class="intro-header">
@@ -128,69 +128,118 @@
             
             <div><span class="retry-link" onclick="initQuiz()">↺ 再練一次這組單字</span></div>
 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNkem-vuwWTDc5eEfhv4FlqpubNv7dsoY0uFQEcv4c5rCtyg/viewform?usp=header" class="cta-button" target="_blank">前往👉實戰驗收：📝多益模擬題型</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNkem-vuwWTDc5eEfhv4FlqpubNv7dsoY0uFQEcv4c5rCtyg/viewform?usp=header" class="cta-button" target="_blank">前往👉下一關:中階情境演練</a>
 
             <div class="footer-upsell">
-                💡 這套「直覺單字+實戰刷題」模式很有效吧!完整多益衝刺計畫已在蝦皮上架。<br>
-                <a href="https://shopee.tw/YOUR_LINK" class="shopee-link" target="_blank">點此前往蝦皮賣場看更多</a>
+                這套「單字直覺」練習模式很有效吧!完整多益衝刺計畫已上架。<br>
+                <a href="https://shopee.tw/YOUR_LINK" class="shopee-link" target="_blank">點此前往看更多</a>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-// 【EP05】基礎打底特訓 101–125 核心資料庫
+// EP05 核心資料庫 (101 - 125 共 25 字，答案交替互補且完美去字首尾提示)
 const rawData = [
-    { type: "單字辨析", word: "morning traffic <u><b>update</b></u>", show: "最新資訊", ans: true, feedback: "update 是名詞「最新資訊」。" },
-    { type: "句型搭配", word: "update", show: "morning traffic ______ / 填入：update", ans: true, feedback: "應填入 update。" },
-    { type: "單字辨析", word: "open a new <u><b>branch</b></u> overseas", show: "樹枝、樹幹", ans: false, feedback: "branch 在此指名詞「分店、分行」。" },
-    { type: "句型搭配", word: "branch", show: "open a new ______ overseas / 填入：branch", ans: true, feedback: "應填入 branch。" },
-    { type: "單字辨析", word: "apply for <u><b>paid</b></u> leave", show: "免費的", ans: false, feedback: "paid 是形容詞「支薪的;付清的」。" },
-    { type: "句型搭配", word: "paid", show: "apply for ______ leave / 填入：paid", ans: true, feedback: "應填入 paid。" },
-    { type: "單字辨析", word: "<u><b>Unfortunately</b></u>, there are delays with delivery.", show: "不幸地、遺憾地", ans: true, feedback: "unfortunately 是副詞「不幸地、遺憾地」。" },
-    { type: "句型搭配", word: "unfortunately", show: "______, there are delays with delivery. / 填入：Unfortunately", ans: true, feedback: "應填入 Unfortunately。" },
-    { type: "單字辨析", word: "in <u><b>original</b></u> condition upon return", show: "獨創的、新穎的", ans: false, feedback: "original 在此為形容詞「原始的、最初的」。" },
-    { type: "句型搭配", word: "original", show: "in ______ condition upon return / 填入：original", ans: true, feedback: "應填入 original。" },
-    { type: "單字辨析", word: "a <u><b>rent</b></u> increase notice", show: "房租", ans: true, feedback: "rent 是名詞「房租」。" },
-    { type: "句型搭配", word: "rent", show: "a ______ increase notice / 填入：rent", ans: true, feedback: "應填入 rent。" },
-    { type: "單字辨析", word: "write a <u><b>memo</b></u> to staff", show: "回憶錄", ans: false, feedback: "memo 是名詞「備忘錄」。" },
-    { type: "句型搭配", word: "memo", show: "write a ______ to staff / 填入：memo", ans: true, feedback: "應填入 memo。" },
-    { type: "單字辨析", word: "shop for <u><b>luggage</b></u> online", show: "行李箱、行李", ans: true, feedback: "luggage 是名詞「行李箱、行李」。" },
-    { type: "句型搭配", word: "luggage", show: "shop for ______ online / 填入：luggage", ans: true, feedback: "應填入 luggage。" },
-    { type: "單字辨析", word: "an <u><b>editor</b></u>-in-chief", show: "審查員", ans: false, feedback: "editor 是名詞「編輯」。" },
-    { type: "句型搭配", word: "editor", show: "an ______-in-chief / 填入：editor", ans: true, feedback: "應填入 editor。" },
-    { type: "單字辨析", word: "art <u><b>exhibition</b></u> opening", show: "展覽、展示", ans: true, feedback: "exhibition 是名詞「展覽、展示」。" },
-    { type: "句型搭配", word: "exhibition", show: "art ______ opening / 填入：exhibition", ans: true, feedback: "應填入 exhibition。" },
-    { type: "單字辨析", word: "a <u><b>leading</b></u> company", show: "落後的", ans: false, feedback: "leading 是形容詞「頂級的、一流的」。" },
-    { type: "句型搭配", word: "leading", show: "a ______ company / 填入：leading", ans: true, feedback: "應填入 leading。" },
-    { type: "單字辨析", word: "join an international <u><b>organization</b></u>", show: "組織、企業團體", ans: true, feedback: "organization 是名詞「組織、企業團體」。" },
-    { type: "句型搭配", word: "organization", show: "join an international ______ / 填入：organization", ans: true, feedback: "應填入 organization。" },
-    { type: "單字辨析", word: "<u><b>release</b></u> a new software update", show: "發售、發布", ans: true, feedback: "release 是動詞「發售、發布」。" },
-    { type: "句型搭配", word: "release", show: "______ a new software update / 填入：release", ans: true, feedback: "應填入 release。" },
-    { type: "單字辨析", word: "for a <u><b>limited</b></u> time offer", show: "無限的", ans: false, feedback: "limited 是形容詞「有限的」。" },
-    { type: "句型搭配", word: "limited", show: "for a ______ time offer / 填入：limited", ans: true, feedback: "應填入 limited。" },
-    { type: "單字辨析", word: "a normal <u><b>procedure</b></u> for refunds", show: "程序、步驟", ans: true, feedback: "procedure 是名詞「程序、步驟」。" },
-    { type: "句型搭配", word: "procedure", show: "a normal ______ for refunds / 填入：procedure", ans: true, feedback: "應填入 procedure。" },
-    { type: "單字辨析", word: "an <u><b>experienced</b></u> manager", show: "新手的、菜鳥的", ans: false, feedback: "experienced 是形容詞「經驗豐富的」。" },
-    { type: "句型搭配", word: "experienced", show: "an ______ manager / 填入：experienced", ans: true, feedback: "應填入 experienced。" },
-    { type: "單字辨析", word: "All company <u><b>personnel</b></u> must attend the meeting.", show: "私人恩怨", ans: false, feedback: "personnel 是名詞「員工、全體人員」。" },
-    { type: "句型搭配", word: "personnel", show: "All company ______ must attend the meeting. / 填入：personnel", ans: true, feedback: "應填入 personnel。" },
-    { type: "單字辨析", word: "the <u><b>author</b></u> of a best-selling novel", show: "作者、作家", ans: true, feedback: "author 是名詞「作者、作家」。" },
-    { type: "句型搭配", word: "author", show: "the ______ of a best-selling novel / 填入：author", ans: true, feedback: "應填入 author。" },
-    { type: "單字辨析", word: "employee <u><b>benefits</b></u>", show: "員工福利", ans: true, feedback: "benefit 在此指名詞「福利;利益」。" },
-    { type: "句型搭配", word: "benefit", show: "employee ______ s / 填入：benefits", ans: true, feedback: "應填入 benefits。" },
-    { type: "單字辨析", word: "<u><b>focus</b></u> on customer satisfaction", show: "分散、模糊", ans: false, feedback: "focus 是動詞「集中、聚焦」。" },
-    { type: "句型搭配", word: "focus", show: "______ on customer satisfaction / 填入：focus", ans: true, feedback: "應填入 focus。" },
-    { type: "單字辨析", word: "<u><b>participate</b></u> in a business workshop", show: "參加", ans: true, feedback: "participate 是動詞「參加」。" },
-    { type: "句型搭配", word: "participate", show: "______ in a business workshop / 填入：participate", ans: true, feedback: "應填入 participate。" },
-    { type: "單字辨析", word: "the <u><b>cause</b></u> of the problem", show: "結果", ans: false, feedback: "cause 是名詞「原因;起因」。" },
-    { type: "句型搭配", word: "cause", show: "the ______ of the problem / 填入：cause", ans: true, feedback: "應填入 cause。" },
-    { type: "單字辨析", word: "a <u><b>degree</b></u> in marketing", show: "學位;程度", ans: true, feedback: "degree 是名詞「學位;程度」。" },
-    { type: "句型搭配", word: "degree", show: "a ______ in marketing / 填入：degree", ans: true, feedback: "應填入 degree。" },
-    { type: "單字辨析", word: "purchase <u><b>directly</b></u> from our website", show: "間接地", ans: false, feedback: "directly 是副詞「直接地」。" },
-    { type: "句型搭配", word: "directly", show: "purchase ______ from our website / 填入：directly", ans: true, feedback: "應填入 directly。" },
-    { type: "單字辨析", word: "the <u><b>host</b></u> of the conference", show: "主持人", ans: true, feedback: "host 是名詞「主持人」。" },
-    { type: "句型搭配", word: "host", show: "the ______ of the conference / 填入：host", ans: true, feedback: "應填入 host。" }
+    // 101. update (辨析: True / 句型: False)
+    { id: "update", type: "單字辨析", word: "morning traffic <u><b>update</b></u>", show: "最新資訊", ans: true, feedback: "update 是名詞「最新資訊」。" },
+    { id: "update", type: "句型搭配", show: "morning traffic ______ / 填入：branch", ans: false, feedback: "應填入 update。" },
+
+    // 102. branch (辨析: False / 句型: True)
+    { id: "branch", type: "單字辨析", word: "open a new <u><b>branch</b></u> overseas", show: "支薪的;付清的", ans: false, feedback: "branch 是名詞「分店、分行」。" },
+    { id: "branch", type: "句型搭配", show: "open a new ______ overseas / 填入：branch", ans: true, feedback: "應填入 branch。" },
+
+    // 103. paid (辨析: True / 句型: False)
+    { id: "paid", type: "單字辨析", word: "apply for <u><b>paid</b></u> leave", show: "支薪的;付清的", ans: true, feedback: "paid 是形容詞「支薪的;付清的」。" },
+    { id: "paid", type: "句型搭配", show: "apply for ______ leave / 填入：original", ans: false, feedback: "應填入 paid。" },
+
+    // 104. unfortunately (辨析: False / 句型: True)
+    { id: "unfortunately", type: "單字辨析", word: "<u><b>Unfortunately</b></u>, there are delays with delivery.", show: "原始的", ans: false, feedback: "unfortunately 是副詞「不幸地、遺憾地」。" },
+    { id: "unfortunately", type: "句型搭配", show: "______, there are delays with delivery. / 填入：Unfortunately", ans: true, feedback: "應填入 Unfortunately。" },
+
+    // 105. original (辨析: True / 句型: False)
+    { id: "original", type: "單字辨析", word: "in <u><b>original</b></u> condition upon return", show: "原始的", ans: true, feedback: "original 是形容詞「原始的」。" },
+    { id: "original", type: "句型搭配", show: "in ______ condition upon return / 填入：rent", ans: false, feedback: "應填入 original。" },
+
+    // 106. rent (辨析: False / 句型: True)
+    { id: "rent", type: "單字辨析", word: "a <u><b>rent</b></u> increase notice", show: "備忘錄", ans: false, feedback: "rent 是名詞「房租」。" },
+    { id: "rent", type: "句型搭配", show: "a ______ increase notice / 填入：rent", ans: true, feedback: "應填入 rent。" },
+
+    // 107. memo (辨析: True / 句型: False)
+    { id: "memo", type: "單字辨析", word: "write a <u><b>memo</b></u> to staff", show: "備忘錄", ans: true, feedback: "memo 是名詞「備忘錄」。" },
+    { id: "memo", type: "句型搭配", show: "write a ______ to staff / 填入：luggage", ans: false, feedback: "應填入 memo。" },
+
+    // 108. luggage (辨析: False / 句型: True)
+    { id: "luggage", type: "單字辨析", word: "shop for <u><b>luggage</b></u> online", show: "編輯", ans: false, feedback: "luggage 是名詞「行李箱」。" },
+    { id: "luggage", type: "句型搭配", show: "shop for ______ online / 填入：luggage", ans: true, feedback: "應填入 luggage。" },
+
+    // 109. editor (辨析: True / 句型: False)
+    { id: "editor", type: "單字辨析", word: "an <u><b>editor</b></u>-in-chief", show: "編輯", ans: true, feedback: "editor 是名詞「編輯」。" },
+    { id: "editor", type: "句型搭配", show: "an ______-in-chief / 填入：exhibition", ans: false, feedback: "應填入 editor。" },
+
+    // 110. exhibition (辨析: False / 句型: True)
+    { id: "exhibition", type: "單字辨析", word: "art <u><b>exhibition</b></u> opening", show: "頂級的、一流的", ans: false, feedback: "exhibition 是名詞「展覽、展示」。" },
+    { id: "exhibition", type: "句型搭配", show: "art ______ opening / 填入：exhibition", ans: true, feedback: "應填入 exhibition。" },
+
+    // 111. leading (辨析: True / 句型: False)
+    { id: "leading", type: "單字辨析", word: "a <u><b>leading</b></u> company", show: "頂級的、一流的", ans: true, feedback: "leading 是形容詞「頂級的、一流的」。" },
+    { id: "leading", type: "句型搭配", show: "a ______ company / 填入：organization", ans: false, feedback: "應填入 leading。" },
+
+    // 112. organization (辨析: False / 句型: True)
+    { id: "organization", type: "單字辨析", word: "join an international <u><b>organization</b></u>", show: "發售、發布", ans: false, feedback: "organization 是名詞「組織、企業團體」。" },
+    { id: "organization", type: "句型搭配", show: "join an international ______ / 填入：organization", ans: true, feedback: "應填入 organization。" },
+
+    // 113. release (辨析: True / 句型: False)
+    { id: "release", type: "單字辨析", word: "<u><b>release</b></u> a new software update", show: "發售、發布", ans: true, feedback: "release 是動詞「發售、發布」。" },
+    { id: "release", type: "句型搭配", show: "______ a new software update / 填入：procedure", ans: false, feedback: "應填入 release。" },
+
+    // 114. limited (辨析: False / 句型: True)
+    { id: "limited", type: "單字辨析", word: "for a <u><b>limited</b></u> time offer", show: "程序、步驟", ans: false, feedback: "limited 是形容詞「有限的」。" },
+    { id: "limited", type: "句型搭配", show: "for a ______ time offer / 填入：limited", ans: true, feedback: "應填入 limited。" },
+
+    // 115. procedure (辨析: True / 句型: False)
+    { id: "procedure", type: "單字辨析", word: "a normal <u><b>procedure</b></u> for refunds", show: "程序、步驟", ans: true, feedback: "procedure 是名詞「程序、步驟」。" },
+    { id: "procedure", type: "句型搭配", show: "a normal ______ for refunds / 填入：experienced", ans: false, feedback: "應填入 procedure。" },
+
+    // 116. experienced (辨析: False / 句型: True)
+    { id: "experienced", type: "單字辨析", word: "an <u><b>experienced</b></u> manager", show: "員工", ans: false, feedback: "experienced 是形容詞「經驗豐富的」。" },
+    { id: "experienced", type: "句型搭配", show: "an ______ manager / 填入：experienced", ans: true, feedback: "應填入 experienced。" },
+
+    // 117. personnel (辨析: True / 句型: False)
+    { id: "personnel", type: "單字辨析", word: "All company <u><b>personnel</b></u> must attend the meeting.", show: "員工", ans: true, feedback: "personnel 是名詞「員工」。" },
+    { id: "personnel", type: "句型搭配", show: "All company ______ must attend the meeting. / 填入：benefit", ans: false, feedback: "應填入 personnel。" },
+
+    // 118. author (辨析: False / 句型: True)
+    { id: "author", type: "單字辨析", word: "the <u><b>author</b></u> of a best-selling novel", show: "福利;利益", ans: false, feedback: "author 是名詞「作者、作家」。" },
+    { id: "author", type: "句型搭配", show: "the ______ of a best-selling novel / 填入：author", ans: true, feedback: "應填入 author。" },
+
+    // 119. benefit (辨析: True / 句型: False)
+    { id: "benefit", type: "單字辨析", word: "employee <u><b>benefits</b></u>", show: "福利;利益", ans: true, feedback: "benefit 是名詞「福利;利益」。" },
+    { id: "benefit", type: "句型搭配", show: "employee ______ / 填入：focus", ans: false, feedback: "應填入 benefits。" },
+
+    // 120. focus (辨析: False / 句型: True)
+    { id: "focus", type: "單字辨析", word: "<u><b>focus</b></u> on customer satisfaction", show: "參加", ans: false, feedback: "focus 是動詞「集中、聚焦」。" },
+    { id: "focus", type: "句型搭配", show: "______ on customer satisfaction / 填入：focus", ans: true, feedback: "應填入 focus。" },
+
+    // 121. participate (辨析: True / 句型: False)
+    { id: "participate", type: "單字辨析", word: "<u><b>participate</b></u> in a business workshop", show: "參加", ans: true, feedback: "participate 是動詞「參加」。" },
+    { id: "participate", type: "句型搭配", show: "______ in a business workshop / 填入: cause", ans: false, feedback: "應填入 participate。" },
+
+    // 122. cause (辨析: False / 句型: True)
+    { id: "cause", type: "單字辨析", word: "the <u><b>cause</b></u> of the problem", show: "學位;程度", ans: false, feedback: "cause 是名詞「原因;理念」。" },
+    { id: "cause", type: "句型搭配", show: "the ______ of the problem / 填入：cause", ans: true, feedback: "應填入 cause。" },
+
+    // 123. degree (辨析: True / 句型: False)
+    { id: "degree", type: "單字辨析", word: "a <u><b>degree</b></u> in marketing", show: "學位;程度", ans: true, feedback: "degree 是名詞「學位;程度」。" },
+    { id: "degree", type: "句型搭配", show: "a ______ in marketing / 填入：directly", ans: false, feedback: "應填入 degree。" },
+
+    // 124. directly (辨析: False / 句型: True)
+    { id: "directly", type: "單字辨析", word: "purchase <u><b>directly</b></u> from our website", show: "主持人", ans: false, feedback: "directly 是副詞「直接」。" },
+    { id: "directly", type: "句型搭配", show: "purchase ______ from our website / 填入：directly", ans: true, feedback: "應填入 directly。" },
+
+    // 125. host (辨析: True / 句型: False)
+    { id: "host", type: "單字辨析", word: "the <u><b>host</b></u> of the conference", show: "主持人", ans: true, feedback: "host 是名詞「主持人」。" },
+    { id: "host", type: "句型搭配", show: "the ______ of the conference / 填入：limited", ans: false, feedback: "應填入 host。" }
 ];
 
 let questions = [];
@@ -199,9 +248,36 @@ let score = 0;
 let userHistoryList = []; 
 
 function initQuiz() {
-    const shuffled = [...rawData].sort(() => 0.5 - Math.random());
-    questions = shuffled.slice(0, 5);
-    currentIndex = 0; score = 0; userHistoryList = [];
+    const groups = {};
+    rawData.forEach(item => {
+        if (!groups[item.id]) groups[item.id] = [];
+        groups[item.id].push(item);
+    });
+
+    const wordIds = Object.keys(groups);
+    const shuffledIds = wordIds.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+    // 強制題型分配：5 題中至少各半 (3:2 或是 2:3) 參雜兩種類型，避免全出同一類
+    const typesToAssign = ["單字辨析", "單字辨析", "句型搭配", "句型搭配", Math.random() > 0.5 ? "單字辨析" : "句型搭配"];
+    typesToAssign.sort(() => 0.5 - Math.random());
+
+    let selectedQuestions = [];
+    shuffledIds.forEach((id, index) => {
+        const targetType = typesToAssign[index];
+        const questionOfTargetType = groups[id].find(q => q.type === targetType);
+        if (questionOfTargetType) {
+            selectedQuestions.push(questionOfTargetType);
+        } else {
+            const randomPick = groups[id][Math.floor(Math.random() * groups[id].length)];
+            selectedQuestions.push(randomPick);
+        }
+    });
+
+    questions = selectedQuestions.sort(() => 0.5 - Math.random());
+    
+    currentIndex = 0; 
+    score = 0; 
+    userHistoryList = [];
     document.getElementById('main-banner').classList.remove('compact');
     document.getElementById('intro-area').style.display = 'block';
     document.getElementById('quiz-section').style.display = 'block';
@@ -217,13 +293,15 @@ function loadQuestion() {
     document.getElementById('type-tag').innerText = q.type;
     const wordEl = document.getElementById('word');
     
+    // 嚴格清除與重設，徹底修正上一題 DOM 残留 bug
     if (q.type === "句型搭配") {
-        wordEl.style.display = 'none';
-        document.getElementById('content').innerText = q.show;
+        wordEl.style.display = 'none'; 
+        wordEl.innerHTML = ''; 
+        document.getElementById('content').innerText = q.show; 
     } else {
         wordEl.style.display = 'block';
         wordEl.innerHTML = q.word; 
-        document.getElementById('content').innerText = `這個字的意思是：${q.show}`;
+        document.getElementById('content').innerText = `中文意思：${q.show}`;
     }
     
     document.getElementById('feedback').style.display = 'none';
@@ -237,7 +315,13 @@ function handleAnswer(userAns) {
     document.querySelectorAll('.btn-group button').forEach(b => b.disabled = true);
     feedback.style.display = 'block';
     const isCorrect = (userAns === q.ans);
-    userHistoryList.push({ word: q.word, isCorrect: isCorrect, feedback: q.feedback });
+    
+    userHistoryList.push({ 
+        word: q.type === "句型搭配" ? "句型搭配" : q.word, 
+        isCorrect: isCorrect, 
+        feedback: q.feedback 
+    });
+    
     if (isCorrect) {
         score += 20;
         feedback.innerText = "✅ " + q.feedback;
@@ -265,10 +349,11 @@ function showResult() {
     const now = new Date();
     const timeStr = `${now.getMonth() + 1}/${now.getDate()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
 
-    let history = JSON.parse(localStorage.getItem('toeic_history_ep05_v3')) || [];
+    // 專屬緩存 Key，防跨關卡與資料交叉污染
+    let history = JSON.parse(localStorage.getItem('toeic_history_ep05_v2')) || [];
     history.unshift({ score: score, time: timeStr });
     if(history.length > 5) history.pop();
-    localStorage.setItem('toeic_history_ep05_v3', JSON.stringify(history));
+    localStorage.setItem('toeic_history_ep05_v2', JSON.stringify(history));
     renderHistoryList(history);
 
     document.getElementById('review-list').innerHTML = userHistoryList.map(item => `
@@ -295,7 +380,7 @@ function renderHistoryList(history) {
 
 function confirmClear() {
     if (confirm("確定要清除所有練習紀錄嗎？")) {
-        localStorage.removeItem('toeic_history_ep05_v3');
+        localStorage.removeItem('toeic_history_ep05_v2');
         renderHistoryList([]);
     }
 }
